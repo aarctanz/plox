@@ -1,6 +1,5 @@
 from sys import argv
 from lox.lox import Lox
-
 def main(argv):
     if len(argv)>1:
         print("Usage: lox [script]")

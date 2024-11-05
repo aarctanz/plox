@@ -1,4 +1,4 @@
-import sys
+# from lox.scanner import Scanner
 
 class Lox:
     hadError = False
@@ -9,23 +9,25 @@ class Lox:
         Lox.hadError = True
     
     @staticmethod
-    def error( line, message):
+    def error( line: int, message: str):
         Lox.report(line, "", message)
 
 
     @staticmethod
     def run(code):
         pass
+        # scanner = Scanner(code)
+        # print(scanner.scanTokens())
 
     @staticmethod
     def runFile(filePath):
         with open(filePath, "r") as file:
             Lox.run(file.read())
             if Lox.hadError:
-                sys.exit(65)
+                exit(65)
     
     @staticmethod
-    def runPrompt(Lox):
+    def runPrompt():
         while True: 
             try:
                 text = input('>>> ')
