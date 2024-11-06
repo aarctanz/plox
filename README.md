@@ -10,12 +10,18 @@ Clone the repository and run the interpreter:
 git clone https://github.com/aarctanz/plox.git
 cd plox
 ```
-## Running a file
+
+## Print Tokens
+```
+python -m lox tokenize test.lox
+```
+
+## Running a file(not complete)
 ```
 python -m lox /path/to/file.lox
 ```
 
-## Interactive REPL
+## Interactive REPL(not complete)
 ```
 python -m lox
 ```

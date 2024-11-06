@@ -1,0 +1,5 @@
+var language = "Lox";
+print language;
+if (language == "Lox") {
+  print "This is Lox!";
+}

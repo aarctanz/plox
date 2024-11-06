@@ -1,4 +1,4 @@
-# from lox.scanner import Scanner
+from lox.scanner import Scanner
 
 class Lox:
     hadError = False
@@ -39,3 +39,10 @@ class Lox:
             print(result)
             Lox.hadError = False
 
+    @staticmethod
+    def printTokens(code):
+        scanner = Scanner(code)
+        try:
+            print((str(scanner.scanTokens())))
+        except Exception as e:
+            print("Error ", e.args[0])
