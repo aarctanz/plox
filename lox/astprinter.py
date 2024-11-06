@@ -15,7 +15,9 @@ class AstPrinter(expr.ExprVisitor):
         return self.parenthesize(expr.expression.value)
     
     def visit_literal_expr(self, expr) -> str:
-        return self.parenthesize(expr.value)
+        if expr.value==None:
+            return "nil"
+        return str(expr.value)
     
     def visit_unary_expr(self, expr) -> str:
         return self.parenthesize(expr.operator.lexeme, expr.right)
@@ -36,7 +38,9 @@ class RPNprint(expr.ExprVisitor):
         return self.parenthesize(expr.expression.value)
     
     def visit_literal_expr(self, expr) -> str:
-        return self.parenthesize(expr.value)
+        if expr.value==None:
+            return "nil"
+        return str(expr.value)
     
     def visit_unary_expr(self, expr) -> str:
         return self.parenthesize(expr.operator.lexeme, expr.right)
